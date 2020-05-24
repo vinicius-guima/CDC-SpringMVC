@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Casa do Código</title>
 </head>
 <body>
 <h1>Produto cadastrado com Sucesso</h1>
