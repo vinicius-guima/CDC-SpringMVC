@@ -7,7 +7,6 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,7 +32,7 @@ public class ProdutosController {
 	}
 
 	  @RequestMapping("/form")
-	    public ModelAndView form(){
+	    public ModelAndView form(Produto produto){
 		 ModelAndView modelAndview = new ModelAndView("/produtos/form");
 		 modelAndview.addObject( "tipos",TipoPreco.values());
 	        return modelAndview;
@@ -41,14 +40,14 @@ public class ProdutosController {
 
 
 	@RequestMapping (method=RequestMethod.POST)
-	public ModelAndView grava(@Valid Produto produto,BindingResult result, RedirectAttributes attributes) {
+	public ModelAndView salva(@Valid Produto produto,BindingResult result, RedirectAttributes attributes) {
 		if(result.hasErrors()) {
-			return form();
+			return form(produto);
 		}
 		
 		produtoDao.grava(produto);
 		attributes.addFlashAttribute("sucesso", "Produto cadastado com sucesso!!");
-		return new ModelAndView("redirect: produtos");
+		return new ModelAndView("redirect: /casadocodigo/produtos");
 	}
 	
 	@RequestMapping( method = RequestMethod.GET)
