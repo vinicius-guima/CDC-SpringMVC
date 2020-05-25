@@ -23,11 +23,13 @@ public class Produto {
 	private String descricao;
 	private int paginas;
 	
-	@DateTimeFormat
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Calendar dataLancamento;
 
 	@ElementCollection
 	private List<Preco> precos;
+	
+	private String sumarioPath;
 
 
 	public int getId() {
@@ -70,10 +72,6 @@ public class Produto {
 		this.precos = precos;
 	}
 
-	@Override
-	public String toString() {
-		return "Prduto [ titulo = \'" + titulo.trim() + "\', Descrição = \'" + descricao.trim() + "\', Páginas = " + paginas+ " ]";
-	}
 
 	public Calendar getDataLancamento() {
 		return dataLancamento;
@@ -81,5 +79,18 @@ public class Produto {
 	
 	public void setDataLancamento(Calendar dataLancamento) {
 		this.dataLancamento = dataLancamento;
+	}
+	public String getSumarioPath() {
+		return sumarioPath;
+	}
+
+	public void setSumarioPath(String sumario) {
+		this.sumarioPath = sumario;
+	}
+
+	@Override
+	public String toString() {
+		return "Prduto [ titulo = \'" + titulo.trim() + "\', Descrição = \'" + descricao.trim() + "\', Páginas = "
+				+ paginas + " ]";
 	}
 }
