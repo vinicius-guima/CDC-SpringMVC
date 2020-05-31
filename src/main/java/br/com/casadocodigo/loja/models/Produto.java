@@ -30,7 +30,7 @@ public class Produto {
 	@ElementCollection
 	private List<Preco> precos;
 	
-	private String sumarioPath;
+	 private String sumarioPath;
 
 
 	public int getId() {
@@ -81,12 +81,13 @@ public class Produto {
 	public void setDataLancamento(Calendar dataLancamento) {
 		this.dataLancamento = dataLancamento;
 	}
+
 	public String getSumarioPath() {
 		return sumarioPath;
 	}
 
-	public void setSumarioPath(String sumario) {
-		this.sumarioPath = sumario;
+	public void setSumarioPath(String sumarioPath) {
+		this.sumarioPath = sumarioPath;
 	}
 
 	@Override

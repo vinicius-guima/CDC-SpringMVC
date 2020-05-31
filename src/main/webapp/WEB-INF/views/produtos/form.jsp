@@ -41,7 +41,6 @@
 				<form:input path="precos[${ status.index}].valor" />
 				<form:hidden path="precos[${ status.index}].tipo"
 					value="${tipoPreco}" />
-
 			</div>
 		</c:forEach>
 			<div>
@@ -49,8 +48,6 @@
 			<input type="file" name="sumario" /> 
 			<!-- mesmo nome no metodo salva()  --> 
 		</div>
-
-
 		<button type="submit">Cadastrar</button>
 	</form:form>
 </body>

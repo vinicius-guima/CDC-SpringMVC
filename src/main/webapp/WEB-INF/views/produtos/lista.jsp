@@ -13,6 +13,7 @@
 	<h1>Lista de Livros</h1>
 
 	 <div>${sucesso}</div>
+	 <div>${falha}</div>
 	 
 	<table>
 		<tr>
